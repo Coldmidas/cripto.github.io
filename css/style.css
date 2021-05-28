@@ -4,6 +4,14 @@
           box-sizing: border-box;
 }
 
+.container__me {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 header {
   padding: 20px 0;
   min-height: 80px;
@@ -129,35 +137,38 @@ header .hat-site__btn a {
 
 .main-page {
   min-height: 820px;
-  padding: 91px 0 79px 0;
-  position: relative;
+  padding: 91px 20px 79px 20px;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.main-page .flex {
+.main-page__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.main-page__bgr {
+.main-page__img {
+  position: relative;
+}
+
+.main-page__bcg {
   position: absolute;
-  width: 644px;
-  height: 492px;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(6.5%, #fafafa), to(#ffdffd));
-  background: linear-gradient(180deg, #fafafa 6.5%, #ffdffd);
-  top: 245px;
-  left: 165px;
-  z-index: -1;
-  border-radius: 23px;
+  left: 0;
+  z-index: -2;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(6.5%, #FFFFFF), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(180deg, #FFFFFF 6.5%, rgba(255, 255, 255, 0) 100%);
+}
+
+.main-page__girl {
+  z-index: 10;
 }
 
 .main-page__info {
-  padding: 40px 0 0 87px;
+  margin: 40px 0 0 87px;
 }
 
 .main-page__info h1 {
@@ -197,8 +208,28 @@ header .hat-site__btn a {
   text-decoration: none;
 }
 
+@media (max-width: 991px) {
+  .main-page__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main-page__bcg {
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+  .main-page__girl {
+    position: relative;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+}
+
 .company {
-  height: 320px;
+  min-height: 320px;
   padding: 64px 0px 105px 0px;
 }
 
@@ -223,9 +254,6 @@ header .hat-site__btn a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -235,9 +263,28 @@ header .hat-site__btn a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+  .company__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .company__item {
+    margin-bottom: 25px;
+  }
+  .company__item img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 850px) {
+  .company__wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .tittle {
@@ -293,6 +340,9 @@ header .hat-site__btn a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .platform-info__wrapper {
@@ -356,7 +406,7 @@ header .hat-site__btn a {
 
 .currency {
   min-height: 691px;
-  padding: 100px 184px 100px 0;
+  padding: 100px 184px 100px 100px;
 }
 
 .currency__wrapper {
@@ -366,6 +416,9 @@ header .hat-site__btn a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .currency__img {
@@ -838,6 +891,7 @@ header .hat-site__btn a {
 }
 
 body {
+  width: 100%;
   background: #FFFFFF;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

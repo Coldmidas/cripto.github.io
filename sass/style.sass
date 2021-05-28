@@ -1,6 +1,13 @@
 *
     font-family: 'Inter', sans-serif
     box-sizing: border-box
+
+.container__me
+	width: 100%
+	max-width: 1200px
+	margin: 0 auto
+	padding-left: 15px
+	padding-right: 15px
 header
 	padding: 20px 0
 	min-height: 80px
@@ -78,56 +85,66 @@ header
             align-items: center
 
 .main-page 
-    min-height: 820px
-    padding: 91px 0 79px 0
-    position: relative
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    .flex
-        display: flex
-        justify-content: space-between
-    &__bgr
-        position: absolute
-        width: 644px;
-        height: 492px;
-        background: linear-gradient(180deg, #fafafa 6.5%, #ffdffd )
-        top: 245px
-        left: 165px
-        z-index: -1
-        border-radius: 23px
+	min-height: 820px
+	padding: 91px 20px 79px 20px
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	&__wrapper
+		display: flex
+		justify-content: center
+	&__img
+		position: relative
+	&__bcg
+		position: absolute
+		left: 0
+		z-index: -2
+		background: linear-gradient(180deg, #FFFFFF 6.5%, rgba(255, 255, 255, 0) 100%);
+	&__girl
+		z-index: 10
+		
+	&__info
+		margin: 40px 0 0 87px
+		h1
+			font-style: normal;
+			font-weight: bold;
+			font-size: 51px;
+			line-height: 130%;
+			color: #333333;
+			text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+			margin-bottom: 20px
+	&__descr
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		line-height: 150%;
+		color: #666666
+		margin-bottom: 25px
+	&__btn
+		width: 194px;
+		height: 62px;
+		background: linear-gradient(0deg, #2A2740, #2A2740);
+		border-radius: 8px
+		cursor: pointer
+		a
+			font-style: normal
+			font-weight: bold
+			font-size: 20px
+			line-height: 150%
+			color: #FFFFFF
+			text-decoration: none
+	@media  (max-width: 991px)
+		&__wrapper
+			flex-direction: column
+		&__bcg
+			left: 50%;
+			transform: translate(-50%);
+		&__girl
+			position: relative;
+			left: 50%;
+			transform: translate(-50%);
 
-    &__info
-        padding: 40px 0 0 87px
-        h1
-            font-style: normal;
-            font-weight: bold;
-            font-size: 51px;
-            line-height: 130%;
-            color: #333333;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
-            margin-bottom: 20px
-    &__descr
-        font-style: normal;
-        font-weight: normal;
-        font-size: 20px;
-        line-height: 150%;
-        color: #666666
-        margin-bottom: 25px
-    &__btn
-        width: 194px;
-        height: 62px;
-        background: linear-gradient(0deg, #2A2740, #2A2740);
-        border-radius: 8px
-        cursor: pointer
-        a
-            font-style: normal
-            font-weight: bold
-            font-size: 20px
-            line-height: 150%
-            color: #FFFFFF
-            text-decoration: none
 // доделать main-page бекграундом сделать картинку и повернуть ее на 90 градусов
 .company
-	height: 320px
+	min-height: 320px
 	padding: 64px 0px 105px 0px
 	&__tittle
 		font-style: normal
@@ -144,11 +161,23 @@ header
 			color: #333333
 	&__wrapper
 		display: flex
-		justify-content: space-between
+		// justify-content: space-between
 		align-items: center
+		
 	&__item
 		display: flex
-		justify-content: space-between
+		// justify-content: space-between
+	@media (max-width: 991px)
+		&__wrapper
+			flex-direction: column
+		&__item
+			margin-bottom: 25px
+			img
+				width: 100%
+	@media (max-width: 850px)
+		&__wrapper
+			flex-wrap: wrap
+		
 
 .tittle
 	font-style: normal
@@ -181,8 +210,8 @@ header
 		width: 625px
 	&__privilege
 		display: flex
-		
 		align-items: center
+		justify-content: center
 	&__wrapper
 		display: flex
 		align-items: center
@@ -222,10 +251,11 @@ header
 
 .currency
 	min-height: 691px
-	padding: 100px 184px 100px 0
+	padding: 100px 184px 100px 100px
 	&__wrapper
 		display: flex
 		align-items: center
+		justify-content: center
 		
 	&__img
 		position: relative
@@ -583,22 +613,12 @@ header
 		text-align: center
 
 body
+	width: 100%
 	background: #FFFFFF;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 		
-
 		
 		
-				
+// медиа запросы 				
 
-
-	
-	
-
-
-
-	
-
-
-		
